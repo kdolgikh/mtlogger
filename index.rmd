@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Video
 
 <video autosize: true controls>
-<source src="GI_Logger_video4.mp4" type="video/mp4">
+<source src="GI_Logger_video7.mp4" type="video/mp4">
 </video>
 
 
