@@ -9,10 +9,17 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## Pics
+image: ![](./logger_pics/Picture1.png)
+
+pic2: ![](./logger_pics/Picture2.png)
+
+pic3: ![](./logger_pics/Picture4.png)
+
+image: ![](./logger_pics/Picture3.png)
+
 ## Video
 
 <video width="800" height="501" controls>
 <source src="GI_Logger_video7.mp4" type="video/mp4">
 </video>
-
-
