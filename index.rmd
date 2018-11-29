@@ -8,9 +8,47 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+![](./logger_pics/Picture1.png)
 
-## Pics
-image: ![](./logger_pics/Picture1.png)
+# Introduction
+
+The UAF Geophysical Institute Permafrost Lab studies frozen soil and the changes it experiences due to the warming climate. The study includes measuring temperatures at different depths below the surface. Measurements are made with a 1.5 meters long thermistor probes installed in the ground or with thermistor strings or proprietary temperature sensors that are immersed into bore holes up to 90 meters deep. For the measurements, the Permafrost Lab currently uses CR10X [1] and CR1000 [2], both made by Campbell Scientific, Inc. and Onset Computer Corporation’s Hobo U12-series [3], [4] and UX120-006 [5] dataloggers. Scientists at the Permafrost Lab require the loggers to possess certain qualities with respect to the number of channels, temperature measurement performance, memory capacity, and battery life, as well as overall dimensions, weight, and waterproofness of the enclosure. The research on the commercially available dataloggers, including the above-mentioned ones, showed that there is no single logger on the market that will meet all the requirements posed by the Permafrost Lab scientists. This motivation drove the need to develop a new data logger, which could resolve small changes in temperature, was accurate, inexpensive, small, and had enough memory capacity and battery life to sustain through the long logging sessions. The prototype of such data logger has been developed and is presented below.
+
+# Objectives
+
+The objective of this work was to design, implement, and test the prototype of a multi-channel outdoor data logger with wireless capability (the Logger). The Logger had to meet the requirements posed by the Permafrost Lab, however it had to be adaptable so that it could be used by any researcher. The designed Logger had to have the following features:
+
+* Compatibility with the existing thermistor probes and strings that use 10 kΩ nominal resistance thermistors.
+* A multi-channel ADC (not fewer than 16 channels).
+* The temperature data resolution of at least 0.01° C.
+* The accuracy of at least 0.01° C near 0° C and less than 0.05° C elsewhere in the operating range of -40° to 40° C when making measurements with thermistors. 
+* Maximum temperature range of -40° to +40° C.
+* The ability to store hourly measurements from all channels for at least 2 years.
+* Battery powered with battery life of at least 2 years.
+* The Logger should allow user to update firmware in the field without special equipment.
+* The ability to download data wirelessly and potentially participate in a wireless sensor network.
+* The Logger size is less than about 3 cm in diameter.
+* Waterproof enclosure.
+
+# The Overview of the Designed Logger
+
+* The Logger uses a 24-bit sigma-delta ADC with NTC thermistors as sensing elements; 5, 10, and 20 kΩ thermistors are supported. An analog signal multiplexer is used to connect 16 thermistors to the ADC.
+* Data is stored into the internal memory and an optional micro-SD card of up to 2 GB providing storage for up to 42 million measurements for each channel.
+* The Logger has two measurement modes: real-time clock and bulk. In the real-time clock mode, a 16-channel measurement is repeated at the user selectable rate maintained by the real-time clock timer. The minimum measurement rate is 2 seconds, while the maximum rate is not restricted. In the bulk mode, each channel’s measurement is repeated non-stop until the predefined number of memory segments is filled with data. This process repeats until the Logger’s memory is full.
+* The supported output data rates with corresponding minimal measurement rates are: 5 SPS / 12 s, 10 SPS / 6 s, 20 SPS / 4 s. The minimal measurement rate for data rates of 40, 80, 160, 320, 640, 1000, and 2000 SPS is 2 seconds.
+* The Logger’s estimated battery life is 8 years when making measurements once per hour.
+* Data is retrieved using the USB interface. Additionally, the Logger has a radio transmitter, which will allow it to download data wirelessly and potentially participate in a wireless sensor network once the appropriate firmware is developed. Currently, only the communication protocol with the radio is implemented, while the radio-to-radio protocol is under development.
+* The user interface is implemented in MATLAB. It is a command-line interface, which provides full control over the Logger.
+* The Logger’s components are rated down to -40° C and the Logger successfully passed testing at ‑30° C.
+
+# Overview of the Results
+
+* The extensive testing has shown that the Logger outperforms the Campbell Scientific, Inc. CR1000 logger and exceeds the design requirements. Measured temperature resolution of the Logger is below 2.5 mK in the entire temperature range. The Logger’s equivalent temperature accuracy, which was determined using a known resistive input, is below 10 mK within ‑25° C to 40° C and below 20 mK elsewhere. The developed calibration technique provides the equivalent accuracy below 0.3 mK within -40° C to 40° C.
+* To provide an accuracy of ±0.01° C when making temperature measurements with thermistors, the Logger should be calibrated against a thermometer that has been calibrated as a secondary standard, which will be done in the future.
+* To determine the effect of ambient temperature on a measurement accuracy, the series of experiments was conducted with the Logger operating at -30°, -25°, -20° and 6° C. It was noted that with the ambient temperature being lowered, the accuracy of measurements was increasing. 
+* To evaluate the Logger’s ability to measure temperature, the ice-bath and the outside measurements were performed. The measured ice-bath temperature was -0.048 °C. In the outside measurements, the Logger demonstrated superior temperature resolution against the CR1000.
+
+# Future work
 
 pic2: ![](./logger_pics/Picture2.png)
 
@@ -23,3 +61,9 @@ image: ![](./logger_pics/Picture3.png)
 <video width="800" height="501" controls>
 <source src="GI_Logger_video7.mp4" type="video/mp4">
 </video>
+
+# Acknowledgements
+
+
+
+# References
