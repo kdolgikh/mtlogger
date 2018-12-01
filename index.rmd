@@ -1,5 +1,5 @@
 ---
-title: "Multi-channel Data Logger for Precise Temperature Measurements"
+title: "Multi-Channel Data Logger for Precise Temperature Measurements"
 author: "By Kirill Dolgikh"
 # date: "November 27, 2018"
 output: html_document
@@ -8,7 +8,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-![](./logger_pics/Picture1.png)
+![](Prototype2_2.png)
 
 # Introduction
 
@@ -41,29 +41,66 @@ The objective of this work was to design, implement, and test the prototype of a
 * The user interface is implemented in MATLAB. It is a command-line interface, which provides full control over the Logger.
 * The Logger’s components are rated down to -40° C and the Logger successfully passed testing at ‑30° C.
 
+Figure 1. The first prototype of the Logger: ![](Prototype1_1.png)
+![](Prototype1_2.png)
+
 # Overview of the Results
 
-* The extensive testing has shown that the Logger outperforms the Campbell Scientific, Inc. CR1000 logger and exceeds the design requirements. Measured temperature resolution of the Logger is below 2.5 mK in the entire temperature range. The Logger’s equivalent temperature accuracy, which was determined using a known resistive input, is below 10 mK within ‑25° C to 40° C and below 20 mK elsewhere. The developed calibration technique provides the equivalent accuracy below 0.3 mK within -40° C to 40° C.
-* To provide an accuracy of ±0.01° C when making temperature measurements with thermistors, the Logger should be calibrated against a thermometer that has been calibrated as a secondary standard, which will be done in the future.
+* The extensive testing has shown that the Logger outperforms the Campbell Scientific, Inc. CR1000 logger and exceeds the design requirements. Measured temperature resolution of the Logger is less than 5 mK in the entire temperature range and less than 1 mK below 0° C. The Logger’s equivalent temperature accuracy, which was determined using a known resistive input, is below 10 mK within ‑25° C to 40° C and below 20 mK elsewhere. The developed calibration technique provides the equivalent accuracy below 0.3 mK within -40° C to 40° C. To provide an accuracy of ±0.01° C when making temperature measurements with thermistors, the Logger should be calibrated against a thermometer that has been calibrated as a secondary standard, which will be done in the future.
 * To determine the effect of ambient temperature on a measurement accuracy, the series of experiments was conducted with the Logger operating at -30°, -25°, -20° and 6° C. It was noted that with the ambient temperature being lowered, the accuracy of measurements was increasing. 
 * To evaluate the Logger’s ability to measure temperature, the ice-bath and the outside measurements were performed. The measured ice-bath temperature was -0.048 °C. In the outside measurements, the Logger demonstrated superior temperature resolution against the CR1000.
+* Figures 2 – 9 summarize the testing results.
+
+![](./results_pics/Results1-2.png)
+
+![](./results_pics/Results3-4.png)
+
+![](./results_pics/Results5-6.png)
+
+![](./results_pics/Results7-8.png)
 
 # Future work
 
-pic2: ![](./logger_pics/Picture2.png)
+Presented is the prototype of the data logger for precise soil temperature measurements that has 16 channels, can store up to 41.9 million measurements per channel, is capable of withstanding low temperatures, and can be adapted for other temperature measuring applications. The Logger exceeds most of the design requirements and outperforms one of the best commercially available loggers in terms of temperature measurements. Despite the encouraging accomplishments, there are still many things to be added to the current design. Firstly, a waterproof enclosure with a connector for thermistors should be manufactured and tested. Figures 10 and 11 show the renders of the complete device and the enclosure with the Logger and a battery pack respectively.
 
-pic3: ![](./logger_pics/Picture4.png)
+Figure 10. The render of the complete device:
+![](Prototype2_2.png)
 
-image: ![](./logger_pics/Picture3.png)
 
-## Video
+Figure 11. The render of the enclosure with the Logger and a battery pack
+![](Prototype2_1.png)
+
+This short video shows the assembly process of the future device:
 
 <video width="800" height="501" controls>
 <source src="GI_Logger_video7.mp4" type="video/mp4">
 </video>
 
+Secondly, the are several firmware features to be implemented:
+The mechanism that will keep track of the Logger’s temperature and calibrate its ADC when necessary.
+The radio communication protocol for the wireless data download.
+For the real-time clock mode, the ability to set different start options: delayed start, start at 00 minutes 00 seconds of the next hour, and start at the specified time.
+The real-time clock calibration based on the Logger’s temperature.
+The ability to do measurements when the Logger is connected to the host PC, so the user can verify the Logger’s proper operation before deploying it.
+Additionally, a stand-alone multi-platform software for a graphical user interface should be developed instead of the command-line interface.
+Thirdly, a multi-point calibration should be performed to provide the required accuracy of temperature measurements when using thermistors.
+The final step, after the improved prototype is tested and calibrated, will be to check if it complies with the FCC regulations. Once this requirement is met, the production version of the Logger can be manufactured.
+
 # Acknowledgements
 
-
+The author is thankful to Dr. Dejan Raskovic, UAF for his valuable advice and guiding, Dr. Vladimir Romanovsky, UAF for giving me the idea for the device and providing financial support, William Cable and Dr. Denise Thorsen, UAF for their advice and for pointing me in the right direction.
 
 # References
+
+[1] Campbell Scientific, Inc., "CR10X. Datalogger for Measurement and Control," Campbell Scientific, Inc., [Online]. Available:
+(https://www.campbellsci.com/cr10x)
+
+[2] Campbell Scientic, Inc., "CR1000. Datalogger for Measurement and Control," Campbell Scientific, Inc., [Online]. Available:
+(https://www.campbellsci.com/cr1000)
+
+[3] Onset Computer Corp., "HOBO 4-Channel External Data Logger Part # U12-006," Onset Computer Corp., [Online]. Available: (http://www.onsetcomp.com/products/data-loggers/u12-006)
+
+[4] Onset Computer Corp., "HOBO 4-Channel External Data Logger Part # U12-008," Onset Computer Corp., [Online]. Available: (http://www.onsetcomp.com/products/data-loggers/u12-008)
+
+[5] Onset Computer Corp., "HOBO 4-Channel Analog Data Logger Part # UX120-006M," Onset Computer Corp., [Online]. Available: (http://www.onsetcomp.com/products/data-loggers/ux120-006m)
+
