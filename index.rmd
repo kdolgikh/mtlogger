@@ -49,7 +49,7 @@ Figure 1. The first prototype of the Logger: ![](Prototype1_1.png)
 * The extensive testing has shown that the Logger outperforms the Campbell Scientific, Inc. CR1000 logger and exceeds the design requirements. Measured temperature resolution of the Logger is less than 5 mK in the entire temperature range and less than 1 mK below 0° C. The Logger’s equivalent temperature accuracy, which was determined using a known resistive input, is below 10 mK within ‑25° C to 40° C and below 20 mK elsewhere. The developed calibration technique provides the equivalent accuracy below 0.3 mK within -40° C to 40° C. To provide an accuracy of ±0.01° C when making temperature measurements with thermistors, the Logger should be calibrated against a thermometer that has been calibrated as a secondary standard, which will be done in the future.
 * To determine the effect of ambient temperature on a measurement accuracy, the series of experiments was conducted with the Logger operating at -30°, -25°, -20° and 6° C. It was noted that with the ambient temperature being lowered, the accuracy of measurements was increasing. 
 * To evaluate the Logger’s ability to measure temperature, the ice-bath and the outside measurements were performed. The measured ice-bath temperature was -0.048 °C. In the outside measurements, the Logger demonstrated superior temperature resolution against the CR1000.
-* Figures 2 – 9 summarize the testing results.
+* Figures 2 – 9 summarize the testing results:
 
 ![](./results_pics/Results1-2.png)
 
@@ -67,7 +67,7 @@ Figure 10. The render of the complete device:
 ![](Prototype2_2.png)
 
 
-Figure 11. The render of the enclosure with the Logger and a battery pack
+Figure 11. The render of the enclosure with the Logger and a battery pack:
 ![](Prototype2_1.png)
 
 This short video shows the assembly process of the future device:
