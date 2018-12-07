@@ -88,7 +88,7 @@ The final step, after the improved prototype is tested and calibrated, will be t
 
 # Acknowledgements
 
-The author is thankful to Dr. Dejan Raskovic, UAF for his valuable advice and guiding, Dr. Vladimir Romanovsky, UAF for giving me the idea for the device and providing financial support, William Cable and Dr. Denise Thorsen, UAF for their advice and for pointing me in the right direction.
+The author is thankful to Dr. Dejan Raskovic, UAF for his valuable advice and guiding, Dr. Vladimir Romanovsky, UAF for giving the idea for the device and providing financial support, William Cable and Dr. Denise Thorsen, UAF for their advice and for pointing the author in the right direction.
 
 # References
 
