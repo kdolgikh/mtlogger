@@ -1,6 +1,6 @@
 ---
 title: "Multi-Channel Data Logger for Precise Temperature Measurements"
-author: "By Kirill Dolgikh"
+author: "By Kirill Dolgikh &copy;"
 # date: "November 27, 2018"
 output: html_document
 ---
